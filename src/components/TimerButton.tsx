@@ -1,19 +1,16 @@
-import { MouseEvent, useState } from 'react';
+import { useState } from 'react';
 
 type ComponentProps = {
     action: 'Start' | 'Pause' | 'Stop' ;
+    onClick: () => void;
 }
 
-const TimerButton = ({ action }: ComponentProps) => {
+const TimerButton = ({ action, onClick }: ComponentProps) => {
 
     const [actionName, setActionName] = useState(action);
 
-    const handleClick = (event: MouseEvent) => {
-        console.log(actionName)
-    }
-
     return (
-        <button onClick={handleClick}> { actionName } </button>
+        <button onClick={onClick}> { actionName } </button>
     );
 }
 
