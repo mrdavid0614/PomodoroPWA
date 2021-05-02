@@ -1,16 +1,12 @@
-import { useState } from 'react';
-
 type ComponentProps = {
-    action: 'Start' | 'Pause' | 'Stop' ;
+    buttonText: 'Start' | 'Pause' | 'Stop' ;
     onClick: () => void;
 }
 
-const TimerButton = ({ action, onClick }: ComponentProps) => {
-
-    const [actionName, setActionName] = useState(action);
+const TimerButton = ({ buttonText, onClick }: ComponentProps) => {
 
     return (
-        <button onClick={onClick}> { actionName } </button>
+        <button onClick={onClick}> { buttonText } </button>
     );
 }
 

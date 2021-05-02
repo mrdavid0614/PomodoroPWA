@@ -14,32 +14,32 @@ const Timer = ({ duration }: ComponentProps) => {
 		setDurationLeft(durationLeft - 1)
 	}, 1000);
 
-	const handleClickOnStartButton = () => {
-		console.log('Start Button')
+	const onTimerStart = () => {
+		console.log('Timer started');
 	};
 
-	const handleClickOnPauseButton = () => {
-		console.log('Pause Button')
+	const onTimerPause = () => {
+		console.log('Timer paused');
 	};
 
-	const handleClickOnStopButton = () => {
-		console.log('Stop Button');
+	const onTimerStop = () => {
+		console.log('Timer stopped');
 	};
 
 	return (
 		<div>
 			<p>{ durationLeft }</p>
 			<TimerButton
-				action="Start"
-				onClick={handleClickOnStartButton}
+				buttonText="Start"
+				onClick={onTimerStart}
 			/>
 			<TimerButton 
-				action="Pause"
-				onClick={handleClickOnPauseButton}
+				buttonText="Pause"
+				onClick={onTimerPause}
 			/>
 			<TimerButton
-				action="Stop"
-				onClick={handleClickOnStopButton}
+				buttonText="Stop"
+				onClick={onTimerStop}
 			/>
 		</div>
 	);
