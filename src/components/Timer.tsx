@@ -9,21 +9,22 @@ type ComponentProps = {
 
 const Timer = ({ duration }: ComponentProps) => {
 	const [durationLeft, setDurationLeft] = useState(duration);
+	const [isRunning, setIsRunning] = useState(false);
 
 	useInterval(() => {
 		setDurationLeft(durationLeft - 1)
 	}, 1000);
 
 	const onTimerStart = () => {
-		console.log('Timer started');
+		setIsRunning(true);
 	};
 
 	const onTimerPause = () => {
-		console.log('Timer paused');
+		setIsRunning(false);
 	};
 
 	const onTimerStop = () => {
-		console.log('Timer stopped');
+		setIsRunning(false);
 	};
 
 	return (
