@@ -14,11 +14,8 @@ const Timer = () => {
 
 	const fetchNextStatus = (): Status["id"] => {
 		if (currentStatus.id === 1) {
-			if (pomodorosCompleted > 0 && pomodorosCompleted % 4 === 0) {
-				return 3;
-			};
-
-			return 2;
+			const hasCompletedFourPomodoros = (pomodorosCompleted > 0 && pomodorosCompleted % 4 === 0);
+			return hasCompletedFourPomodoros ? 3 : 2;
 		};
 
 		return 1;
