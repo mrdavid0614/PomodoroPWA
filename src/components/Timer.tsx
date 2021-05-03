@@ -4,6 +4,7 @@ import { Status } from "../types/status";
 import { pomodoroStatus } from "../library/pomodoroStatus";
 import { pomodoroDurations } from "../library/pomodoroDurations";
 
+import { TimerScreen } from "./TimerScreen";
 import { TimerButton } from './TimerButton';
 
 const Timer = () => {
@@ -50,7 +51,8 @@ const Timer = () => {
 
 	return (
 		<div>
-			<p>{ durationLeft }</p>
+			<TimerScreen secondsLeft={ durationLeft } />
+
 			<TimerButton
 				buttonText="Start"
 				onClick={onTimerStart}
