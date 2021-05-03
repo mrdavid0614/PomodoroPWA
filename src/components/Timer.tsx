@@ -1,19 +1,43 @@
 import { useState } from "react";
 import { useInterval } from "../hooks/useInterval";
+import { Status } from "../types/status";
+import { pomodoroStatus } from "../library/pomodoroStatus";
+import { pomodoroDurations } from "../library/pomodoroDurations";
 
 import { TimerButton } from './TimerButton';
 
-type ComponentProps = {
-	duration: number;
-};
-
-const Timer = ({ duration }: ComponentProps) => {
-	const [durationLeft, setDurationLeft] = useState(duration);
+const Timer = () => {
+	const [pomodorosCompleted, setPomodorosCompleted] = useState(0);
+	const [currentStatus, setCurrentStatus] = useState<Status>(pomodoroStatus[1]);
+	const [durationLeft, setDurationLeft] = useState(pomodoroDurations[1]);
 	const [isRunning, setIsRunning] = useState(false);
 
+	const fetchNextStatus = (): Status["id"] => {
+		if (currentStatus.id === 1) {
+			if (pomodorosCompleted > 0 && pomodorosCompleted % 4 === 0) {
+				return 3;
+			};
+
+			return 2;
+		};
+
+		return 1;
+	};
+
 	useInterval(() => {
-		setDurationLeft(durationLeft - 1)
-	}, 1000);
+		if (durationLeft === 0) {
+			if (currentStatus.id === 1) {
+				setPomodorosCompleted(pomodorosCompleted + 1);
+			};
+
+			setCurrentStatus(pomodoroStatus[fetchNextStatus()]);
+			setDurationLeft(pomodoroDurations[currentStatus.id]);
+			setIsRunning(true);
+			return;
+		};
+
+		setDurationLeft(durationLeft - 1);
+	}, isRunning ? 1000 : null);
 
 	const onTimerStart = () => {
 		setIsRunning(true);
