@@ -47,6 +47,9 @@ const Pomodoro = () => {
 
 	const onTimerStop = () => {
 		setIsRunning(false);
+		setPomodorosCompleted(0);
+		setCurrentStatus(pomodoroStatus["work"]);
+		setDurationLeft(pomodoroDurations["work"]);
 	};
 
 	return (
