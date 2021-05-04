@@ -4,6 +4,7 @@ import { Status } from "../types/status";
 import { pomodoroStatus } from "../library/pomodoroStatus";
 import { pomodoroDurations } from "../library/pomodoroDurations";
 
+import { PomodoroStatus } from "./PomodoroStatus";
 import { PomodoroScreen } from "./PomodoroScreen";
 import { PomodoroControls } from "./PomodoroControls";
 
@@ -54,6 +55,11 @@ const Pomodoro = () => {
 
 	return (
 		<div>
+			<PomodoroStatus
+				currentStatus={ currentStatus.title }
+				pomodorosCompleted={ pomodorosCompleted }
+			/>
+
 			<PomodoroScreen secondsLeft={ durationLeft } />
 
 			<PomodoroControls
