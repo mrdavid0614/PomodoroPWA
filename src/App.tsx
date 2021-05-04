@@ -1,14 +1,11 @@
-import React from 'react';
-import './App.css';
-
 import { Pomodoro } from "./components/Pomodoro";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div>
       <Pomodoro />
     </div>
   );
 }
 
-export default App;
+export { App };
