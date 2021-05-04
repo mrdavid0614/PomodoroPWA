@@ -1,7 +1,7 @@
 const pomodoroDurations = {
-	1: 1500,
-	2: 300,
-	3: 1800
+	"work": 1500,
+	"short_break": 300,
+	"long_break": 1800
 };
 
 export { pomodoroDurations };
