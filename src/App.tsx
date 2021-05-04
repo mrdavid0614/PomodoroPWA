@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import { Timer } from './components/Timer';
+import { Pomodoro } from "./components/Pomodoro";
 
 function App() {
   return (
     <div className="App">
-      <Timer 
-        duration={200}
-      />
+      <Pomodoro />
     </div>
   );
 }

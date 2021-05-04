@@ -4,7 +4,7 @@ type ComponentProps = {
 	secondsLeft: number;
 };
 
-const TimerScreen = ({ secondsLeft }: ComponentProps) => {
+const PomodoroScreen = ({ secondsLeft }: ComponentProps) => {
 	const { minutes, seconds } = composeTimeFromSeconds(secondsLeft);
 
 	return (
@@ -12,4 +12,4 @@ const TimerScreen = ({ secondsLeft }: ComponentProps) => {
 	);
 };
 
-export { TimerScreen };
+export { PomodoroScreen };
