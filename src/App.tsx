@@ -1,16 +1,11 @@
-import React from 'react';
-import './App.css';
+import { Pomodoro } from "./components/Pomodoro";
 
-import { Timer } from './components/Timer';
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Timer 
-        duration={200}
-      />
+    <div>
+      <Pomodoro />
     </div>
   );
 }
 
-export default App;
+export { App };

@@ -4,10 +4,10 @@ import { Status } from "../types/status";
 import { pomodoroStatus } from "../library/pomodoroStatus";
 import { pomodoroDurations } from "../library/pomodoroDurations";
 
-import { TimerScreen } from "./TimerScreen";
-import { TimerButton } from './TimerButton';
+import { PomodoroScreen } from "./PomodoroScreen";
+import { PomodoroControls } from "./PomodoroControls";
 
-const Timer = () => {
+const Pomodoro = () => {
 	const [pomodorosCompleted, setPomodorosCompleted] = useState(0);
 	const [currentStatus, setCurrentStatus] = useState<Status>(pomodoroStatus[1]);
 	const [durationLeft, setDurationLeft] = useState(pomodoroDurations[1]);
@@ -51,22 +51,15 @@ const Timer = () => {
 
 	return (
 		<div>
-			<TimerScreen secondsLeft={ durationLeft } />
+			<PomodoroScreen secondsLeft={ durationLeft } />
 
-			<TimerButton
-				buttonText="Start"
-				onClick={onTimerStart}
-			/>
-			<TimerButton 
-				buttonText="Pause"
-				onClick={onTimerPause}
-			/>
-			<TimerButton
-				buttonText="Stop"
-				onClick={onTimerStop}
+			<PomodoroControls
+				onTimerStart={ onTimerStart }
+				onTimerPause={ onTimerPause }
+				onTimerStop={ onTimerStop }
 			/>
 		</div>
 	);
 };
 
-export { Timer };
+export { Pomodoro };
