@@ -1,4 +1,4 @@
 export interface Status {
-    public id: 1 | 2 | 3;
+    public id: "work" | "short_break" | "long_break";
     public title: "Work" | "Short Break" | "Long Break";
 }

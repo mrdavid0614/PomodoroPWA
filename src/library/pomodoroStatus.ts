@@ -1,18 +1,18 @@
 import { Status } from "../types/status";
 
 const pomodoroStatus: Record<Status["id"], Status> = {
-	1: {
-		id: 1,
+	"work": {
+		id: "work",
 		title: "Work"
 	},
 
-	2: {
-		id: 2,
+	"short_break": {
+		id: "short_break",
 		title: "Short Break"
 	},
 
-	3: {
-		id: 3,
+	"long_break": {
+		id: "long_break",
 		title: "Long Break"
 	},
 };

@@ -9,22 +9,22 @@ import { PomodoroControls } from "./PomodoroControls";
 
 const Pomodoro = () => {
 	const [pomodorosCompleted, setPomodorosCompleted] = useState(0);
-	const [currentStatus, setCurrentStatus] = useState<Status>(pomodoroStatus[1]);
-	const [durationLeft, setDurationLeft] = useState(pomodoroDurations[1]);
+	const [currentStatus, setCurrentStatus] = useState<Status>(pomodoroStatus["work"]);
+	const [durationLeft, setDurationLeft] = useState(pomodoroDurations["work"]);
 	const [isRunning, setIsRunning] = useState(false);
 
 	const fetchNextStatus = (): Status["id"] => {
-		if (currentStatus.id === 1) {
+		if (currentStatus.id === "work") {
 			const hasCompletedFourPomodoros = (pomodorosCompleted > 0 && pomodorosCompleted % 4 === 0);
-			return hasCompletedFourPomodoros ? 3 : 2;
+			return hasCompletedFourPomodoros ? "long_break" : "short_break";
 		};
 
-		return 1;
+		return "work";
 	};
 
 	useInterval(() => {
 		if (durationLeft === 0) {
-			if (currentStatus.id === 1) {
+			if (currentStatus.id === "work") {
 				setPomodorosCompleted(pomodorosCompleted + 1);
 			};
 
