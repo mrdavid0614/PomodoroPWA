@@ -29,8 +29,9 @@ const Pomodoro = () => {
 				setPomodorosCompleted(pomodorosCompleted + 1);
 			};
 
-			setCurrentStatus(pomodoroStatus[fetchNextStatus()]);
-			setDurationLeft(pomodoroDurations[currentStatus.id]);
+			const nextStatusId = fetchNextStatus();
+			setCurrentStatus(pomodoroStatus[nextStatusId]);
+			setDurationLeft(pomodoroDurations[nextStatusId]);
 			setIsRunning(true);
 			return;
 		};
