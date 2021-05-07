@@ -13,6 +13,27 @@ const GlobalStyle = createGlobalStyle`
 
 	body {
 		font-family: "Fira Code", monospace;
+		font-size: 16px;
+	}
+
+	h1 {
+		font-size: 6rem;
+		font-weight: 500;
+	}
+
+	h2 {
+		font-size: 3rem;
+		font-weight: 400;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+		font-weight: 400;
+	}
+
+	p {
+		font-size: 1rem;
+		font-weight: 400;
 	}
 `;
 
