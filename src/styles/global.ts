@@ -14,6 +14,8 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		font-family: "Nunito", sans-serif;
 		font-size: 16px;
+		color: ${ (props) => props.theme.light.color.text };
+		background-color: ${ (props) => props.theme.light.color.background }
 	}
 
 	h1 {
