@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-	@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
 
 	*,
 	*::before,
@@ -12,13 +12,13 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
-		font-family: "Fira Code", monospace;
+		font-family: "Nunito", sans-serif;
 		font-size: 16px;
 	}
 
 	h1 {
-		font-size: 6rem;
-		font-weight: 500;
+		font-size: calc(6rem + 1vw);
+		font-weight: 800;
 	}
 
 	h2 {
