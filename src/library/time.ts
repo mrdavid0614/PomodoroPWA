@@ -1,5 +1,5 @@
 const addLeadingZeroes = (time: number): string => (
-	time < 10 ? `0${time}` : `${time}`
+	time < 10 ? `0${ time }` : `${ time }`
 );
 
 const composeTimeFromSeconds = (secondsLeft: number) => {

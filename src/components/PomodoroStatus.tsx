@@ -5,7 +5,7 @@ type ComponentProps = {
 	pomodorosCompleted: number;
 };
 
-const PomodoroStatus = ({ currentStatus, pomodorosCompleted}: ComponentProps) => {
+const PomodoroStatus = ({ currentStatus, pomodorosCompleted }: ComponentProps) => {
 	return (
 		<div>
 			<h3>Current Status: { currentStatus }</h3>
