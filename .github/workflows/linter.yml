@@ -1,4 +1,4 @@
-name: CI
+name: Linter test
 
 on:
   pull_request:
@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
       - name: Lint source files
-        run: |
-          yarn install;
-          yarn lint;
+        run: yarn lint
         
