@@ -20,6 +20,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "lint": "yarn eslint ./src/**/*.{tsx,ts,jsx,jsx}",
+    "lint:fix": "yarn eslint --fix ./src/**/*.{tsx,ts,jsx,jsx}",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
