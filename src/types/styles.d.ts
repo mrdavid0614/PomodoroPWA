@@ -12,5 +12,5 @@ declare module "styled-components" {
 	export interface DefaultTheme {
 		light: ColorTheme;
 		dark: ColorTheme;
-	};
-};
+	}
+}

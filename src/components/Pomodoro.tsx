@@ -9,16 +9,16 @@ import { PomodoroScreen } from "./PomodoroScreen";
 import { PomodoroControls } from "./PomodoroControls";
 
 const Pomodoro = () => {
-	const [pomodorosCompleted, setPomodorosCompleted] = useState(0);
-	const [currentStatus, setCurrentStatus] = useState<Status>(pomodoroStatus["work"]);
-	const [durationLeft, setDurationLeft] = useState(pomodoroDurations["work"]);
-	const [isRunning, setIsRunning] = useState(false);
+	const [ pomodorosCompleted, setPomodorosCompleted ] = useState(0);
+	const [ currentStatus, setCurrentStatus ] = useState<Status>(pomodoroStatus["work"]);
+	const [ durationLeft, setDurationLeft ] = useState(pomodoroDurations["work"]);
+	const [ isRunning, setIsRunning ] = useState(false);
 
 	const fetchNextStatus = (): Status["id"] => {
 		if (currentStatus.id === "work") {
 			const hasCompletedFourPomodoros = (pomodorosCompleted > 0 && pomodorosCompleted % 4 === 0);
 			return hasCompletedFourPomodoros ? "long_break" : "short_break";
-		};
+		}
 
 		return "work";
 	};
@@ -27,14 +27,14 @@ const Pomodoro = () => {
 		if (durationLeft === 0) {
 			if (currentStatus.id === "work") {
 				setPomodorosCompleted(pomodorosCompleted + 1);
-			};
+			}
 
 			const nextStatusId = fetchNextStatus();
 			setCurrentStatus(pomodoroStatus[nextStatusId]);
 			setDurationLeft(pomodoroDurations[nextStatusId]);
 			setIsRunning(true);
 			return;
-		};
+		}
 
 		setDurationLeft(durationLeft - 1);
 	}, isRunning ? 1000 : null);
