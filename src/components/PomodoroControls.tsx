@@ -1,7 +1,4 @@
-import StartIcon from "../assets/start.svg";
-import PauseIcon from "../assets/pause.svg";
-import StopIcon from "../assets/stop.svg";
-import "../styles/pomodoroControl.css";
+import { PlayButton, PauseButton, StopButton } from "../styles/pomodoroControls";
 
 type ComponentProps = {
 	onTimerStart: () => void;
@@ -12,15 +9,9 @@ type ComponentProps = {
 const PomodoroControls = ({ onTimerStart, onTimerPause, onTimerStop }: ComponentProps) => {
 	return (
 		<div>
-			<button type="button" onClick={ () => onTimerStart() }>
-				<img src={ StartIcon } alt="Start Button"/>
-			</button>
-			<button type="button" onClick={ () => onTimerPause() }>
-				<img src={ PauseIcon } alt="Pause button"/>
-			</button>
-			<button type="button" onClick={ () => onTimerStop() }>
-				<img src={ StopIcon } alt="Stop button"/>
-			</button>
+			<PlayButton onClick={ ()=> onTimerStart() } size={ 90 } />
+			<PauseButton onClick={ ()=> onTimerPause() } size={ 90 } />
+			<StopButton onClick={ ()=> onTimerStop() } size={ 90 } />
 		</div>
 	);
 };
