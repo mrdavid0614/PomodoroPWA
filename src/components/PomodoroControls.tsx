@@ -1,3 +1,5 @@
+import { PlayButton, PauseButton, StopButton } from "../styles/pomodoroControls";
+
 type ComponentProps = {
 	onTimerStart: () => void;
 	onTimerPause: () => void;
@@ -7,9 +9,9 @@ type ComponentProps = {
 const PomodoroControls = ({ onTimerStart, onTimerPause, onTimerStop }: ComponentProps) => {
 	return (
 		<div>
-			<button type="button" onClick={ () => onTimerStart() }>Start</button>
-			<button type="button" onClick={ () => onTimerPause() }>Pause</button>
-			<button type="button" onClick={ () => onTimerStop() }>Stop</button>
+			<PlayButton onClick={ ()=> onTimerStart() } size={ 90 } />
+			<PauseButton onClick={ ()=> onTimerPause() } size={ 90 } />
+			<StopButton onClick={ ()=> onTimerStop() } size={ 90 } />
 		</div>
 	);
 };
