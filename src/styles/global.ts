@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-	@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
-
 	*,
 	*::before,
 	*::after {
@@ -12,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
-		font-family: "Nunito", sans-serif;
+		font-family: "Nunito Sans", sans-serif;
 		font-size: 16px;
 		color: ${ (props) => props.theme.light.color.text };
 		background-color: ${ (props) => props.theme.light.color.background }
