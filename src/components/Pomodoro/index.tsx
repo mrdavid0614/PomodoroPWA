@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useInterval } from "../hooks/useInterval";
-import { Status } from "../types/status";
-import { pomodoroStatus } from "../library/pomodoroStatus";
-import { pomodoroDurations } from "../library/pomodoroDurations";
+import { useInterval } from "../../hooks/useInterval";
+import { Status } from "../../types/status";
+import { pomodoroStatus } from "../../library/pomodoroStatus";
+import { pomodoroDurations } from "../../library/pomodoroDurations";
 
-import { PomodoroStatus } from "./PomodoroStatus";
-import { PomodoroScreen } from "./PomodoroScreen";
-import { PomodoroControls } from "./PomodoroControls";
+import { PomodoroStatus } from "./PomodoroStatus/index";
+import { PomodoroScreen } from "./PomodoroScreen/index";
+import { PomodoroControls } from "./PomodoroControls/index";
 
 const Pomodoro = () => {
 	const [ pomodorosCompleted, setPomodorosCompleted ] = useState(0);
