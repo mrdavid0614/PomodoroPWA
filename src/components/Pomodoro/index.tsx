@@ -67,6 +67,7 @@ const Pomodoro = () => {
 				onTimerStart={ onTimerStart }
 				onTimerPause={ onTimerPause }
 				onTimerStop={ onTimerStop }
+				isPomodoroRunning={ isRunning }
 			/>
 		</div>
 	);
