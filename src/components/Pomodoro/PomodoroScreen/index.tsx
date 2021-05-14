@@ -1,4 +1,4 @@
-import { composeTimeFromSeconds } from "../library/time";
+import { composeTimeFromSeconds } from "../../../library/time";
 
 type ComponentProps = {
 	secondsLeft: number;
