@@ -1,6 +1,6 @@
-import StartIcon from "../assets/start.svg";
-import PauseIcon from "../assets/pause.svg";
-import StopIcon from "../assets/stop.svg";
+import StartIcon from "../assets/icons/start.svg";
+import PauseIcon from "../assets/icons/pause.svg";
+import StopIcon from "../assets/icons/stop.svg";
 import { Button, Icon } from "../styles/pomodoroControls";
 
 type ComponentProps = {
