@@ -9,9 +9,9 @@ const App = () => {
 		<ThemeProvider theme={ theme }>
 			<GlobalStyle />
       
-			<div>
+			<main>
 				<Pomodoro /> 
-			</div>   
+			</main>   
 		</ThemeProvider>
 	);
 }
