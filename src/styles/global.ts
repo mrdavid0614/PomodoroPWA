@@ -9,11 +9,23 @@ const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 	}
 
+	html,
+	body,
+	#root {
+		height: 100%;
+		width: 100%;
+	}
+
 	body {
 		font-family: "Nunito Sans", sans-serif;
 		font-size: 16px;
 		color: ${ (props) => props.theme.light.color.text };
 		background-color: ${ (props) => props.theme.light.color.background }
+	}
+
+	#root {
+		display: grid;
+		place-items: center;
 	}
 
 	h1 {
