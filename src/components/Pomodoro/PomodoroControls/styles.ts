@@ -1,19 +1,23 @@
 import styled from "styled-components";
 
-const Control = styled.button`
-	padding: 0px;
-  margin: 1rem;
-  width: 4rem;
-  height: 4rem;
-  border: none;
-  border-radius: 50%;
-  background-color: white;
-  cursor: pointer;
+const PomodoroControls = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 
-	img {
-		width: 100%;
-    height: 100%;
-	}
+  button {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+
+	  img {
+	  	width: 100%;
+      height: 100%;
+	  }
+  }
 `;
 
-export { Control };
+export { PomodoroControls };
