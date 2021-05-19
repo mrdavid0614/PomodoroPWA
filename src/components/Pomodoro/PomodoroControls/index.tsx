@@ -12,31 +12,31 @@ type ComponentProps = {
 
 const PomodoroControls = ({ isPomodoroRunning, onTimerStart, onTimerPause, onTimerStop }: ComponentProps) => {
 	return (
-		<div>
-			<Styled.Control 
+		<Styled.PomodoroControls>
+			<button 
 				type="button" 
 				onClick={ () => onTimerStart() } 
 				disabled={ isPomodoroRunning? true : false }
 			>
 				<img src={ StartIcon } alt="Start Button"/>
-			</Styled.Control>
+			</button>
 
-			<Styled.Control 
+			<button 
 				type="button" 
 				onClick={ () => onTimerPause() } 
 				disabled={ isPomodoroRunning? false : true }
 			>
 				<img src={ PauseIcon } alt="Pause button"/>
-			</Styled.Control>
+			</button>
 
-			<Styled.Control 
+			<button 
 				type="button" 
 				onClick={ () => onTimerStop() } 
 				disabled={ isPomodoroRunning? false : true }
 			>
 				<img src={ StopIcon } alt="Stop button"/>
-			</Styled.Control>
-		</div>
+			</button>
+		</Styled.PomodoroControls>
 	);
 };
 
