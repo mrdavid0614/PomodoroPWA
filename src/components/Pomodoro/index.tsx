@@ -7,6 +7,8 @@ import { pomodoroDurations } from "../../library/pomodoroDurations";
 import { PomodoroStatus } from "./PomodoroStatus/index";
 import { PomodoroScreen } from "./PomodoroScreen/index";
 import { PomodoroControls } from "./PomodoroControls/index";
+import { SettingsButton } from "./styles";
+import { ReactComponent as IconSettings } from "./../../assets/icons/settings.svg";
 
 const Pomodoro = () => {
 	const [ pomodorosCompleted, setPomodorosCompleted ] = useState(0);
@@ -56,6 +58,9 @@ const Pomodoro = () => {
 
 	return (
 		<div>
+			<SettingsButton to="/settings">
+				<IconSettings />
+			</SettingsButton>
 			<PomodoroStatus
 				currentStatus={ currentStatus.title }
 				pomodorosCompleted={ pomodorosCompleted }
