@@ -1,7 +1,7 @@
 import * as Styled from "./styles";
-import StartIcon from "../../../assets/icons/start.svg";
-import PauseIcon from "../../../assets/icons/pause.svg";
-import StopIcon from "../../../assets/icons/stop.svg";
+import { ReactComponent as IconStart } from "../../../assets/icons/start.svg";
+import { ReactComponent as IconPause } from "../../../assets/icons/pause.svg";
+import { ReactComponent as IconStop } from "../../../assets/icons/stop.svg";
 
 type ComponentProps = {
 	isPomodoroRunning: boolean;
@@ -18,7 +18,7 @@ const PomodoroControls = ({ isPomodoroRunning, onTimerStart, onTimerPause, onTim
 				onClick={ () => onTimerStart() } 
 				disabled={ isPomodoroRunning? true : false }
 			>
-				<img src={ StartIcon } alt="Start Button"/>
+				<IconStart />
 			</button>
 
 			<button 
@@ -26,7 +26,7 @@ const PomodoroControls = ({ isPomodoroRunning, onTimerStart, onTimerPause, onTim
 				onClick={ () => onTimerPause() } 
 				disabled={ isPomodoroRunning? false : true }
 			>
-				<img src={ PauseIcon } alt="Pause button"/>
+				<IconPause />
 			</button>
 
 			<button 
@@ -34,7 +34,7 @@ const PomodoroControls = ({ isPomodoroRunning, onTimerStart, onTimerPause, onTim
 				onClick={ () => onTimerStop() } 
 				disabled={ isPomodoroRunning? false : true }
 			>
-				<img src={ StopIcon } alt="Stop button"/>
+				<IconStop />
 			</button>
 		</Styled.PomodoroControls>
 	);
