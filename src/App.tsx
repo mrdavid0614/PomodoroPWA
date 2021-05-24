@@ -7,9 +7,8 @@ import {
 	Route,
 
 } from "react-router-dom";
-
-import { Pomodoro } from "./components/Pomodoro";
-import { PomodoroSettings } from "./components/PomodoroSettings";
+import { Home } from "./pages/Home";
+import { Settings } from "./pages/Settings";
 
 const App = () => {
 	return (
@@ -19,11 +18,8 @@ const App = () => {
 			<main>
 				<Router>
 					<Switch>
-						<Route path="/settings">
-							<PomodoroSettings />
-						</Route>
-						<Route path="/">
-							<Pomodoro />
+						<Route path="/settings" component={ Settings } />
+						<Route path="/" component={ Home }>
 						</Route>
 					</Switch>
 				</Router>
