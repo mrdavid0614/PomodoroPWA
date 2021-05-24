@@ -1,8 +1,14 @@
 import { GlobalStyle } from "./styles/global";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
 
-import { Pomodoro } from "./components/Pomodoro/index";
+} from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Settings } from "./pages/Settings";
 
 const App = () => {
 	return (
@@ -10,7 +16,13 @@ const App = () => {
 			<GlobalStyle />
       
 			<main>
-				<Pomodoro /> 
+				<Router>
+					<Switch>
+						<Route path="/settings" component={ Settings } />
+						<Route path="/" component={ Home }>
+						</Route>
+					</Switch>
+				</Router>
 			</main>   
 		</ThemeProvider>
 	);
