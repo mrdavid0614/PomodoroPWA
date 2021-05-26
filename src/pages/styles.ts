@@ -23,10 +23,4 @@ const SettingsButton = styled(Link)`
     }
 `;
 
-const SettingsForm = styled.form`
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 8px;
-`;
-
-export { BackButton, SettingsButton, SettingsForm };
+export { BackButton, SettingsButton };
