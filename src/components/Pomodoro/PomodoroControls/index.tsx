@@ -1,3 +1,4 @@
+import { Icon } from "../../Icon/index";
 import * as Styled from "./styles";
 import { ReactComponent as IconStart } from "../../../assets/icons/start.svg";
 import { ReactComponent as IconPause } from "../../../assets/icons/pause.svg";
@@ -13,29 +14,23 @@ type ComponentProps = {
 const PomodoroControls = ({ isPomodoroRunning, onTimerStart, onTimerPause, onTimerStop }: ComponentProps) => {
 	return (
 		<Styled.PomodoroControls>
-			<button 
-				type="button" 
-				onClick={ () => onTimerStart() } 
-				disabled={ isPomodoroRunning? true : false }
-			>
-				<IconStart />
-			</button>
+			<Icon
+				svg={ <IconStart /> }
+				onClick={ () => onTimerStart() }
+				isDisabled={ isPomodoroRunning ? true : false }
+			/>
 
-			<button 
-				type="button" 
-				onClick={ () => onTimerPause() } 
-				disabled={ isPomodoroRunning? false : true }
-			>
-				<IconPause />
-			</button>
+			<Icon
+				svg={ <IconPause /> }
+				onClick={ () => onTimerPause() }
+				isDisabled={ isPomodoroRunning ? false : true }
+			/>
 
-			<button 
-				type="button" 
-				onClick={ () => onTimerStop() } 
-				disabled={ isPomodoroRunning? false : true }
-			>
-				<IconStop />
-			</button>
+			<Icon
+				svg={ <IconStop /> }
+				onClick={ () => onTimerStop() }
+				isDisabled={ isPomodoroRunning ? false : true }
+			/>
 		</Styled.PomodoroControls>
 	);
 };
