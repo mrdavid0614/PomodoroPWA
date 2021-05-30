@@ -20,7 +20,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": ["error", "tab"],
+        "indent": [2, "tab"],
         "space-in-parens": [ 0, "always" ],
         "template-curly-spacing": [ 2, "always" ],
         "array-bracket-spacing": [ 2, "always" ],
