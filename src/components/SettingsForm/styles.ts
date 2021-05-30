@@ -14,8 +14,8 @@ const Button = styled.button`
     
 `;
 
-const Label = styled.label`
+const Legend = styled.legend`
     font-weight: bold;
 `;
 
-export { Form, Button, Label };
+export { Form, Button, Legend };

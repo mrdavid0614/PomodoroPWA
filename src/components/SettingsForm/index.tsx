@@ -4,25 +4,27 @@ const SettingsForm = () => {
 	return (
 		<Styled.Form>
 			<fieldset>
-				<Styled.Label>Pomodoro durations:</Styled.Label>
+				<Styled.Legend>Pomodoro durations:</Styled.Legend>
 				<div>
-					<label for="workDuration">Work:</label>
+					<label htmlFor="workDuration">Work:</label>
 					<input type="number" min="5" max="50" id="workDuration" />
 				</div>
 				<div>
-					<label for="shortBreakDuration">Short Break:</label>
+					<label htmlFor="shortBreakDuration">Short Break:</label>
 					<input type="number" min="5" max="50" id="shortBreakDuration" />
 				</div>
 				<div>
-					<label for="longBreakDuration">Long Break:</label>
+					<label htmlFor="longBreakDuration">Long Break:</label>
 					<input type="number" min="5" max="50" id="longBreakDuration" />
 				</div>
-				<Styled.Label htmlFor="theme">Theme: </Styled.Label>
+				<label htmlFor="theme">Theme: </label>
 				<select id="theme">
 					<option value="light">Light</option>
 					<option value="dark">Dark</option>
 				</select>
-				<Styled.Button>Save settings</Styled.Button>
+				<p>
+					<Styled.Button>Save settings</Styled.Button>
+				</p>
 			</fieldset>
 		</Styled.Form>
 	)
