@@ -1,5 +1,6 @@
 import { BackButton } from "./styles";
 import { ReactComponent as IconBackArrow } from "../assets/icons/back-arrow.svg";
+import { SettingsForm } from "../components/SettingsForm";
 
 const Settings = () => {
 	return (
@@ -7,7 +8,8 @@ const Settings = () => {
 			<BackButton to="/">
 				<IconBackArrow />
 			</BackButton>
-			<h1> Settings Page! </h1>
+			<h2>Settings</h2>
+			<SettingsForm />
 		</>
 	)
 }
