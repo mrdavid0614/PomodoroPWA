@@ -7,7 +7,9 @@ const defaultStateContext: State = {
 		breakShort: 300,
 		breakLong: 1800
 	},
-	theme: "light"
+	theme: "light",
+	setDurations: () => {},
+	setTheme: () => {},
 };
 
 const StateContext = createContext<State>(defaultStateContext);
