@@ -1,21 +1,27 @@
 import styled from "styled-components";
 
 const Form = styled.form`
+	display: flex;
+	flex-direction: column;
 
-    fieldset {
-        padding: 10px;
-        border-radius: 8px;
-    }
+	fieldset {
+		border: 0;
+	
+		legend {
+			font-weight: bold;
+		}
+	}
+
+	button {
+		margin-top: 0.75rem;
+		justify-self: center;
+		align-self: center;
+	}
 `;
 
-const Button = styled.button`
-    padding: 10px;
-    cursor: pointer;
-    
+const FormControl = styled.div`
+	display: flex;
+	flex-direction: column;
 `;
 
-const Legend = styled.legend`
-    font-weight: bold;
-`;
-
-export { Form, Button, Legend };
+export { Form, FormControl };

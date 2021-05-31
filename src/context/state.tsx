@@ -12,6 +12,7 @@ const defaultStateContext: State = {
 
 const StateContext = createContext<State>(defaultStateContext);
 
+// eslint-disable-next-line react/prop-types
 const StateContextProvider: FC = ({ children }) => {
 	const [ durations, setDurations ] = useState<State["durations"]>(defaultStateContext.durations);
 	const [ theme, setTheme ] = useState<State["theme"]>("light");
