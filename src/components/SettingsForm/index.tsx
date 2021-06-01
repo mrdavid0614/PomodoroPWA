@@ -35,7 +35,7 @@ const SettingsForm = () => {
 				<legend>Pomodoro durations</legend>
 				<small>Measured in minutes</small>
 				<Styled.FormControl>
-					<label htmlFor="workDuration">Work (min)</label>
+					<label htmlFor="workDuration">Work</label>
 					<input
 						type="number"
 						min="5"
@@ -47,7 +47,7 @@ const SettingsForm = () => {
 				</Styled.FormControl>
 
 				<Styled.FormControl>
-					<label htmlFor="shortBreakDuration">Short Break (min)</label>
+					<label htmlFor="shortBreakDuration">Short Break</label>
 					<input
 						type="number"
 						min="5"
@@ -59,7 +59,7 @@ const SettingsForm = () => {
 				</Styled.FormControl>
 
 				<Styled.FormControl>
-					<label htmlFor="longBreakDuration">Long Break (min)</label>
+					<label htmlFor="longBreakDuration">Long Break</label>
 					<input
 						type="number"
 						min="5"
