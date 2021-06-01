@@ -21,44 +21,52 @@ const SettingsForm = () => {
 		setTheme(newTheme);
 	};
 
+	const minutesToSeconds = (minutes: number) => {
+		const minuteInSeconds = 60;
+		return minutes * minuteInSeconds;
+	}
+	const secondsToMinutes = (seconds: number) => {
+		const secondInMinutes = 60;
+		return seconds / secondInMinutes;
+	}
 	return (
 		<Styled.Form onSubmit={ (event) => onSubmit(event) }>
 			<fieldset>
 				<legend>Pomodoro durations</legend>
-
+				<small>Measured in minutes</small>
 				<Styled.FormControl>
-					<label htmlFor="workDuration">Work</label>
+					<label htmlFor="workDuration">Work (min)</label>
 					<input
 						type="number"
 						min="5"
 						max="50"
 						id="workDuration"
-						value={ durationWork }
-						onChange={ ({ target }) => setDurationWork(target.valueAsNumber) }
+						value={ secondsToMinutes(durationWork) }
+						onChange={ ({ target }) => setDurationWork(minutesToSeconds(target.valueAsNumber)) }
 					/>
 				</Styled.FormControl>
 
 				<Styled.FormControl>
-					<label htmlFor="shortBreakDuration">Short Break</label>
+					<label htmlFor="shortBreakDuration">Short Break (min)</label>
 					<input
 						type="number"
 						min="5"
 						max="50"
 						id="shortBreakDuration"
-						value={ durationBreakShort }
-						onChange={ ({ target }) => setDurationBreakShort(target.valueAsNumber) }
+						value={ secondsToMinutes(durationBreakShort) }
+						onChange={ ({ target }) => setDurationBreakShort(minutesToSeconds(target.valueAsNumber)) }
 					/>
 				</Styled.FormControl>
 
 				<Styled.FormControl>
-					<label htmlFor="longBreakDuration">Long Break</label>
+					<label htmlFor="longBreakDuration">Long Break (min)</label>
 					<input
 						type="number"
 						min="5"
 						max="50"
 						id="longBreakDuration"
-						value={ durationBreakLong }
-						onChange={ ({ target }) => setDurationBreakLong(target.valueAsNumber) }
+						value={ secondsToMinutes(durationBreakLong) }
+						onChange={ ({ target }) => setDurationBreakLong(minutesToSeconds(target.valueAsNumber)) }
 					/>
 				</Styled.FormControl>
 			</fieldset>
