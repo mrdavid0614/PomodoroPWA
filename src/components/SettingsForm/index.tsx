@@ -50,8 +50,8 @@ const SettingsForm = () => {
 					<label htmlFor="shortBreakDuration">Short Break</label>
 					<input
 						type="number"
-						min="5"
-						max="50"
+						min="1"
+						max="30"
 						id="shortBreakDuration"
 						value={ secondsToMinutes(durationBreakShort) }
 						onChange={ ({ target }) => setDurationBreakShort(minutesToSeconds(target.valueAsNumber)) }
@@ -62,7 +62,7 @@ const SettingsForm = () => {
 					<label htmlFor="longBreakDuration">Long Break</label>
 					<input
 						type="number"
-						min="5"
+						min="3"
 						max="50"
 						id="longBreakDuration"
 						value={ secondsToMinutes(durationBreakLong) }
