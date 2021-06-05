@@ -1,5 +1,6 @@
 import { useContext, useState, FormEvent } from "react";
 import { StateContext } from "../../context/state";
+import { minutesToSeconds, secondsToMinutes } from "../../library/time";
 import { State } from "../../types/state";
 import * as Styled from "./styles";
 
@@ -21,14 +22,6 @@ const SettingsForm = () => {
 		setTheme(newTheme);
 	};
 
-	const minutesToSeconds = (minutes: number) => {
-		const minuteInSeconds = 60;
-		return minutes * minuteInSeconds;
-	}
-	const secondsToMinutes = (seconds: number) => {
-		const secondInMinutes = 60;
-		return seconds / secondInMinutes;
-	}
 	return (
 		<Styled.Form onSubmit={ (event) => onSubmit(event) }>
 			<fieldset>

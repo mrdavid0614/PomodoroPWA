@@ -12,4 +12,13 @@ const composeTimeFromSeconds = (secondsLeft: number) => {
 	};
 };
 
-export { composeTimeFromSeconds };
+const minutesToSeconds = (minutes: number) => {
+	const minuteInSeconds = 60;
+	return minutes * minuteInSeconds;
+}
+const secondsToMinutes = (seconds: number) => {
+	const secondInMinutes = 60;
+	return seconds / secondInMinutes;
+}
+
+export { composeTimeFromSeconds, minutesToSeconds, secondsToMinutes };
