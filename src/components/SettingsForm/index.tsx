@@ -1,7 +1,7 @@
 import { useContext, useState, FormEvent } from "react";
 import { StateContext } from "../../context/state";
-import { minutesToSeconds, secondsToMinutes } from "../../library/time";
 import { State } from "../../types/state";
+import { SettingsFormPomodoroDuration } from "./SettingsFormPomodoroDuration";
 import * as Styled from "./styles";
 
 const SettingsForm = () => {
@@ -27,41 +27,33 @@ const SettingsForm = () => {
 			<fieldset>
 				<legend>Pomodoro durations</legend>
 				<small>Measured in minutes</small>
-				<Styled.FormControl>
-					<label htmlFor="workDuration">Work</label>
-					<input
-						type="number"
-						min="5"
-						max="50"
-						id="workDuration"
-						value={ secondsToMinutes(durationWork) }
-						onChange={ ({ target }) => setDurationWork(minutesToSeconds(target.valueAsNumber)) }
-					/>
-				</Styled.FormControl>
 
-				<Styled.FormControl>
-					<label htmlFor="shortBreakDuration">Short Break</label>
-					<input
-						type="number"
-						min="1"
-						max="30"
-						id="shortBreakDuration"
-						value={ secondsToMinutes(durationBreakShort) }
-						onChange={ ({ target }) => setDurationBreakShort(minutesToSeconds(target.valueAsNumber)) }
-					/>
-				</Styled.FormControl>
+				<SettingsFormPomodoroDuration
+					id="workDuration"
+					title="Work"
+					value={ durationWork }
+					onChange={ setDurationWork }
+					valueMin={ 5 }
+					valueMax={ 50 }
+				/>
 
-				<Styled.FormControl>
-					<label htmlFor="longBreakDuration">Long Break</label>
-					<input
-						type="number"
-						min="3"
-						max="50"
-						id="longBreakDuration"
-						value={ secondsToMinutes(durationBreakLong) }
-						onChange={ ({ target }) => setDurationBreakLong(minutesToSeconds(target.valueAsNumber)) }
-					/>
-				</Styled.FormControl>
+				<SettingsFormPomodoroDuration
+					id="shortBreakDuration"
+					title="Short Break"
+					value={ durationBreakShort }
+					onChange={ setDurationBreakShort }
+					valueMin={ 1 }
+					valueMax={ 30 }
+				/>
+
+				<SettingsFormPomodoroDuration
+					id="longBreakDuration"
+					title="Long Break"
+					value={ durationBreakLong }
+					onChange={ setDurationBreakLong }
+					valueMin={ 3 }
+					valueMax={ 50 }
+				/>
 			</fieldset>
 
 			<Styled.FormControl>
