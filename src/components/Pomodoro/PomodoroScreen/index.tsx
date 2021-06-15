@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet";
 
 import { composeTimeFromSeconds } from "../../../library/time";
-
+import { Timer } from "./styles";
 type ComponentProps = {
 	secondsLeft: number;
+	onTimerStart: () => void;
 };
 
-const PomodoroScreen = ({ secondsLeft }: ComponentProps) => {
+const PomodoroScreen = ({ secondsLeft, onTimerStart }: ComponentProps) => {
 	const { minutes, seconds } = composeTimeFromSeconds(secondsLeft);
 	const time = `${ minutes }:${ seconds }`;
 
@@ -15,7 +16,7 @@ const PomodoroScreen = ({ secondsLeft }: ComponentProps) => {
 			<Helmet>
 				<title>{ time }</title>
 			</Helmet>
-			<h1>{ time }</h1>
+			<Timer onClick={ () => onTimerStart() }>{ time }</Timer>
 		</>
 		
 	);
