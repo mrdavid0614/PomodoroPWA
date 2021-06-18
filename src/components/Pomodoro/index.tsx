@@ -61,10 +61,9 @@ const Pomodoro = () => {
 				pomodorosCompleted={ pomodorosCompleted }
 			/>
 
-			<PomodoroScreen secondsLeft={ durationLeft } />
+			<PomodoroScreen secondsLeft={ durationLeft } onTimerStart={ onTimerStart }/>
 
 			<PomodoroControls
-				onTimerStart={ onTimerStart }
 				onTimerPause={ onTimerPause }
 				onTimerStop={ onTimerStop }
 				isPomodoroRunning={ isRunning }
