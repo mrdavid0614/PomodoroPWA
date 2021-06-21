@@ -1,11 +1,11 @@
-import { useContext, useState, FormEvent } from "react";
-import { StateContext } from "../../context/state";
+import { useState, FormEvent } from "react";
+import useStateContext from "../../hooks/useStateContext";
 import { State } from "../../types/state";
 import { SettingsFormPomodoroDuration } from "./SettingsFormPomodoroDuration";
 import * as Styled from "./styles";
 
 const SettingsForm = () => {
-	const { durations, theme, setDurations, setTheme } = useContext(StateContext);
+	const { durations, theme, setDurations, setTheme } = useStateContext();
 	const [ durationWork, setDurationWork ] = useState(durations.work);
 	const [ durationBreakShort, setDurationBreakShort ] = useState(durations.breakShort);
 	const [ durationBreakLong, setDurationBreakLong ] = useState(durations.breakLong);
