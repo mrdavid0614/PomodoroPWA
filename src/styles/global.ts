@@ -19,8 +19,8 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		font-family: "Nunito Sans", sans-serif;
 		font-size: 16px;
-		color: ${ (props) => props.theme.light.color.text };
-		background-color: ${ (props) => props.theme.light.color.background }
+		color: ${ ({ theme }) => theme.color.text };
+		background-color: ${ ({ theme }) => theme.color.background }
 	}
 
 	#root {
@@ -49,4 +49,4 @@ const GlobalStyle = createGlobalStyle`
 	}
 `;
 
-export { GlobalStyle };
+export default GlobalStyle;

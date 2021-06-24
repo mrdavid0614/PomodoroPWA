@@ -1,34 +1,28 @@
 import { StateContextProvider } from "./context/state";
-import { GlobalStyle } from "./styles/global";
+import useStateContext from "./hooks/useStateContext";
+import GlobalStyle from "./styles/global";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./styles/theme";
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route
-} from "react-router-dom";
-
-import { Home } from "./pages/Home";
-import { Settings } from "./pages/Settings";
+import themes from "./styles/themes";
+import Routes from "./pages/index";
 
 const App = () => {
-	return (
-		<StateContextProvider>
-			<ThemeProvider theme={ theme }>
-				<GlobalStyle />
+	const { theme } = useStateContext();
 
-				<main>
-					<Router>
-						<Switch>
-							<Route path="/settings" component={ Settings } />
-							<Route path="/" component={ Home }>
-							</Route>
-						</Switch>
-					</Router>
-				</main>   
-			</ThemeProvider>
-		</StateContextProvider>
+	return (
+		<ThemeProvider theme={ themes[theme] }>
+			<GlobalStyle />
+
+			<main>
+				<Routes />
+			</main>
+		</ThemeProvider>
 	);
 };
 
-export { App };
+const AppWrapper = () => (
+	<StateContextProvider>
+		<App />
+	</StateContextProvider>
+)
+
+export default AppWrapper;
