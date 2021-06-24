@@ -12,7 +12,7 @@ const dark: DefaultTheme = {
 	color: {
 		text: "#FCFCFD",
 		background: "#1C1C1E",
-		highlight: "#3C3E43",
+		highlight: "#565c5b",
 	}
 };
 
