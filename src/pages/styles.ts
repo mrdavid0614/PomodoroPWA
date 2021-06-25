@@ -9,6 +9,7 @@ const BackButton = styled(Link)`
     svg {
         width: 2.5rem;
         height: 2.5rem;
+        fill: ${ (({ theme }) => theme.color.text) };
     }
 `;
 
@@ -20,6 +21,7 @@ const SettingsButton = styled(Link)`
     svg {
         width: 2.5rem;
         height: 2.5rem;
+        fill: ${ (({ theme }) => theme.color.text) };
     }
 `;
 
