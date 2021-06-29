@@ -1,18 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useInterval } from "../../hooks/useInterval";
+import useStateContext from "../../hooks/useStateContext";
 import { Status } from "../../types/status";
 import { pomodoroStatus } from "../../library/pomodoroStatus";
-import { pomodoroDurations } from "../../library/pomodoroDurations";
-
 import { PomodoroStatus } from "./PomodoroStatus/index";
 import { PomodoroScreen } from "./PomodoroScreen/index";
 import { PomodoroControls } from "./PomodoroControls/index";
 
 const Pomodoro = () => {
+	const { durations } = useStateContext();
 	const [ pomodorosCompleted, setPomodorosCompleted ] = useState(0);
 	const [ currentStatus, setCurrentStatus ] = useState<Status>(pomodoroStatus["work"]);
-	const [ durationLeft, setDurationLeft ] = useState(pomodoroDurations["work"]);
+	const [ durationLeft, setDurationLeft ] = useState(0);
 	const [ isRunning, setIsRunning ] = useState(false);
+
+	useEffect(() => {
+		setCurrentStatus(pomodoroStatus["work"]);
+		setDurationLeft(durations["work"]);
+	}, []);
 
 	const fetchNextStatus = (): Status["id"] => {
 		if (currentStatus.id === "work") {
@@ -31,7 +36,7 @@ const Pomodoro = () => {
 
 			const nextStatusId = fetchNextStatus();
 			setCurrentStatus(pomodoroStatus[nextStatusId]);
-			setDurationLeft(pomodoroDurations[nextStatusId]);
+			setDurationLeft(durations[nextStatusId]);
 			setIsRunning(true);
 			return;
 		}
@@ -51,7 +56,7 @@ const Pomodoro = () => {
 		setIsRunning(false);
 		setPomodorosCompleted(0);
 		setCurrentStatus(pomodoroStatus["work"]);
-		setDurationLeft(pomodoroDurations["work"]);
+		setDurationLeft(durations["work"]);
 	};
 
 	return (
