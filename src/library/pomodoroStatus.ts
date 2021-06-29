@@ -6,13 +6,13 @@ const pomodoroStatus: Record<Status["id"], Status> = {
 		title: "Work"
 	},
 
-	"short_break": {
-		id: "short_break",
+	"breakShort": {
+		id: "breakShort",
 		title: "Short Break"
 	},
 
-	"long_break": {
-		id: "long_break",
+	"breakLong": {
+		id: "breakLong",
 		title: "Long Break"
 	},
 };

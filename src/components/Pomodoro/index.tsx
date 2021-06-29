@@ -17,7 +17,7 @@ const Pomodoro = () => {
 	const fetchNextStatus = (): Status["id"] => {
 		if (currentStatus.id === "work") {
 			const hasCompletedFourPomodoros = (pomodorosCompleted > 0 && pomodorosCompleted % 4 === 0);
-			return hasCompletedFourPomodoros ? "long_break" : "short_break";
+			return hasCompletedFourPomodoros ? "breakLong" : "breakShort";
 		}
 
 		return "work";
