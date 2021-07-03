@@ -8,7 +8,6 @@ const Settings = () => {
 			<BackButton to="/">
 				<IconBackArrow />
 			</BackButton>
-			<h2>Settings</h2>
 			<SettingsForm />
 		</>
 	)

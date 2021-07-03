@@ -6,6 +6,10 @@ declare module "styled-components" {
 			text: string;
 			background: string;
 			highlight: string;
+			formBackground: string;
+			buttonText: string;
+			buttonBackground: string;
+			buttonBackgroundHover: string;
 		};
 	}
 }
