@@ -24,6 +24,7 @@ const SettingsForm = () => {
 
 	return (
 		<Styled.Form onSubmit={ (event) => onSubmit(event) }>
+			<h2>Settings</h2>
 			<fieldset>
 				<legend>Pomodoro durations</legend>
 				<small>Measured in minutes</small>
@@ -64,7 +65,7 @@ const SettingsForm = () => {
 				</select>
 			</Styled.FormControl>
 
-			<button type="submit">Save settings</button>
+			<Styled.FormButton type="submit">Save</Styled.FormButton>
 		</Styled.Form>
 	)
 };
