@@ -65,7 +65,7 @@ const SettingsForm = () => {
 				</select>
 			</Styled.FormControl>
 
-			<Styled.FormButton type="submit">Save settings</Styled.FormButton>
+			<Styled.FormButton type="submit">Save</Styled.FormButton>
 		</Styled.Form>
 	)
 };

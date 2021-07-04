@@ -6,9 +6,9 @@ const light: DefaultTheme = {
 		background: "#FCFCFD",
 		highlight: "#7B7E84",
 		formBackground: "#D6D6D6",
-		buttonText: "#fff",
+		buttonText: "#FCFCFD",
 		buttonBackground: "#0A0909",
-		buttonBackgroundHover: "#000",
+		buttonBackgroundHover: "#080808",
 	}
 };
 
@@ -18,9 +18,9 @@ const dark: DefaultTheme = {
 		background: "#1C1C1E",
 		highlight: "#565c5b",
 		formBackground: "#161616",
-		buttonText: "#fff",
+		buttonText: "#FCFCFD",
 		buttonBackground: "#0A0909",
-		buttonBackgroundHover: "#000",
+		buttonBackgroundHover: "#080808",
 	}
 };
 

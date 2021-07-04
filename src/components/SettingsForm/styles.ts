@@ -31,7 +31,7 @@ export const Form = styled.form`
 	}
 
 	fieldset {
-		padding: 0 5px;
+		margin-bottom: 20px;
 		border: none;
 	
 		legend {
